@@ -9,7 +9,7 @@ Welcome to the **JackPass Frontend** – a React-powered event management app th
 - **Clone the Repo:**
 
   ```bash
-  git clone <repository-url>
+  git clone https://github.com/imvikashdev/jp-frontend.git
   cd jackpass-frontend
   ```
 
