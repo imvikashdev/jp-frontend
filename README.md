@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+---
+# JackPass Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **JackPass Frontend** – a React-powered event management app that lets you create, view, and manage events with media support, local persistence, and a dash of witty flair.
+---
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Clone the Repo:**
 
-## Expanding the ESLint configuration
+  ```bash
+  git clone <repository-url>
+  cd jackpass-frontend
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Install Dependencies:**
 
-- Configure the top-level `parserOptions` property like this:
+  ```bash
+  npm install
+  # or
+  yarn install
+  ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Run the App:**
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  ```
+  Visit `http://localhost:5173` (or the port specified by Vite) in your browser.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Available Scripts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Development:**  
+  `npm run dev`
+
+- **Build:**  
+  `npm run build`
+
+- **Lint:**  
+  `npm run lint`
+
+- **Preview:**  
+  `npm run preview`
+
+---
+
+## What We Used
+
+- **React & React Router:**  
+  For our single-page application magic.
+
+- **Tailwind CSS & shadcn UI:**  
+  For styling that makes your eyes happy (and responsive designs too).
+
+- **React Hook Form:**  
+  For making forms easy (and validating them).
+
+- **Zustand (with persist middleware):**  
+  For lightweight state management and local storage persistence (because events shouldn’t vanish into thin air).
+
+- **react-error-boundary & @radix-ui/react-toast:**  
+  For catching those pesky errors and showing toast alerts.
+
+- **Leaflet & react-leaflet:**  
+  For interactive maps.
+
+- **Moment.js:**  
+  For date formatting, because working with dates without it is a nightmare.
+
+- **UUID:**  
+  For generating unique event IDs.
+
+---
+
+## Key Functionalities
+
+- **Event Creation:**  
+  Create events with title, description, community, date/time, location (via map or manual entry), and media upload (image/video with proper resizing/thumbnail generation).
+
+- **Event Listing:**  
+  Browse your events in a responsive grid, with neat tabs to switch between events and communities.
+
+- **Data Persistence:**  
+  Your events are stored in the browser (via local storage) so that they persist even if you forget to save your work.
+
+- **Error Handling:**  
+  A functional error boundary catches any mishaps and displays toast notifications (because nobody likes a crashed app).
+
+---
+
+## Final Thoughts
+
+This project is designed to be clean, responsive, and user-friendly. Enjoy exploring and enhancing your event management app!
