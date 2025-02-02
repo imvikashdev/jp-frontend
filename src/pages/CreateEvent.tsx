@@ -24,6 +24,7 @@ import { MediaPickerCard } from '@/components/MediaPicker';
 import { communities, Event, useEventStore } from '@/store/eventStore';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '@/utils/paths';
+import { useToast } from '@/hooks/use-toast';
 
 const customMarkerIcon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
@@ -66,6 +67,7 @@ const CreateEvent = () => {
 
   const { addEvent } = useEventStore();
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [mapLocation, setMapLocation] = useState<LatLng | null>(null);
   const [mediaPreview, setMediaPreview] = useState<string>('');
   const [mediaType, setMediaType] = useState<'image' | 'video' | ''>('');
@@ -111,6 +113,13 @@ const CreateEvent = () => {
       latlng: mapLocation
         ? { lat: mapLocation.lat, lng: mapLocation.lng }
         : undefined,
+    });
+
+    // Display a success toast.
+    toast({
+      title: 'Event Created',
+      description: 'Your event has been successfully created!',
+      variant: 'default', // Adjust variant as per your design
     });
 
     navigate(paths.Home);
